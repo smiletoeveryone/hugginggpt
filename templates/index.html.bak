@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-3 Text, Image, and Speech Generation</title>
+</head>
+<body>
+    <h1>GPT-3 Text, Image, and Speech Generation</h1>
+    <form id="generation-form">
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate</button>
+    </form>
+    <div id="results">
+        <h3>Generated Text:</h3>
+        <p id="generated-text"></p>
+        <h3>Generated Image:</h3>
+        <img id="generated-image" alt="Generated">
+        <h3>Generated Speech:</h3>
+        <audio id="generated-speech" controls></audio>
+    </div>
+
+    <script>
+        const form = document.getElementById("generation-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch("/", { method: "POST", body: formData });
+            const data = await response.json();
+
+            document.getElementById("generated-text").textContent = data.text;
+            document.getElementById("generated-image").src = data.image;
+            document.getElementById("generated-speech").src = data.speech;
+        });
+    </script>
+</body>
+</html>
+
