@@ -6,4 +6,6 @@
 
 # 2. do not forget to install the requirements.txt for matching the module version.
 
-# //note: you also are able to create an anaconda env to avoid messing up your work env.
+## note: you also are able to create an anaconda env to avoid messing up your work env.
+
+## https://arxiv.org/pdf/2303.17580.pdf
