@@ -6,7 +6,7 @@ import base64
 from io import BytesIO
 
 # Replace with your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "your_openai_api_key"
 
 def generate_text(prompt):
     response = openai.Completion.create(
@@ -22,7 +22,7 @@ def generate_text(prompt):
 
 def generate_image(prompt):
     # Replace `your_openai_api_key` with your actual API key
-    api_key = "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"
+    api_key = "your_openai_api_key"
     headers = {"Authorization": f"Bearer {api_key}"}
     data = {"model": "image-alpha-001", "prompt": prompt, "n": 1, "size": "1024x1024"}
     response = requests.post("https://api.openai.com/v1/images/generations", headers=headers, json=data)
